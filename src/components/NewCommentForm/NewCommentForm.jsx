@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './NewCommentForm.scss';
-import { createComment } from '../../api/api';
-
-const { uuid } = require('uuidv4');
+import { nanoid } from 'nanoid';
+import { createComment } from '../../api/helpers';
 
 export const NewCommentForm = ({ selectedPostId, addComment }) => {
   const [userName, setName] = useState('');
@@ -19,7 +18,7 @@ export const NewCommentForm = ({ selectedPostId, addComment }) => {
   const handleSubmit = async(event) => {
     event.preventDefault();
     const newComment = {
-      id: uuid(),
+      id: +(nanoid()),
       postId: selectedPostId,
       name: userName,
       email,
@@ -38,6 +37,7 @@ export const NewCommentForm = ({ selectedPostId, addComment }) => {
     <form
       className="NewCommentForm"
       onSubmit={handleSubmit}
+      method="POST"
     >
       <div className="form-field">
         <input

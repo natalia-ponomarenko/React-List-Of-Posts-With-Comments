@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
-import { getPostComments, getPostDetails, removeComment } from '../../api/api';
+import {
+  getPostComments,
+  getPostDetails,
+  removeComment,
+} from '../../api/helpers';
 import { Loader } from '../Loader';
 import { NewCommentForm } from '../NewCommentForm';
 import './PostDetails.scss';

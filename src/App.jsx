@@ -3,7 +3,7 @@ import './App.scss';
 import './styles/general.scss';
 import { PostsList } from './components/PostsList';
 import { PostDetails } from './components/PostDetails';
-import { getPosts, getUsers, getUserPosts } from './api/api';
+import { getPosts, getUsers, getUserPosts } from './api/helpers';
 
 const App = () => {
   const [posts, setPosts] = useState([]);
